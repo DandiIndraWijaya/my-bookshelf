@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookshelf Apps</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+  <header>
+    <h1>My Bookshelf</h1>
+  </header>
+
+  <main>
+    <section class="book__form">
+      <h2 class="title__form">Masukkan Buku Baru</h2>
+      <form class="input__book__form">
+        <div class="input__group">
+          <label>Judul</label>
+          <input type="text">
+        </div>
+
+        <div class="input__group">
+          <label>Penulis</label>
+          <input type="text">
+        </div>
+
+        <div class="input__group">
+          <label>Tahun</label>
+          <input type="text">
+        </div>
+
+        <div class="input__group">
+          <label  id="labelInputBookIsComplete" for="inputBookIsComplete">Selesai dibaca</label>
+          <input id="inputBookIsComplete" type="checkbox">
+        </div>
+
+        <button id="submit__new__book__button" type="submit">
+          <p>Masukkan buku ke rak <b>Belum selesai dibaca</b></p>
+        </button>
+      </form>
+    </section>
+
+    <section class="bookshelf">
+      <div class="search__book__form">
+        <div class="input__group">
+          <label>Cari buku</label>
+          <input class="search__input" type="text">
+        </div>
+      </div>
+      <div id="incomplete__book__shelf__list" class="bookshelf__list">
+        <h2 class="bookshelf__list__title">Belum selesai dibaca</h2>
+      </div>
+      <br>
+      <div id="complete__book__shelf__list" class="bookshelf__list">
+        <h2 class="bookshelf__list__title">Sudah selesai dibaca</h2>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>Made by <span class="me">Dandi Indra Wijaya</span></p>
+  </footer>
+
+  <script src="/js/script.js"></script>
+</body>
+</html>
