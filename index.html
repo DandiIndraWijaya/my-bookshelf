@@ -18,25 +18,25 @@
   <main>
     <section class="book__form">
       <h2 class="title__form">Masukkan Buku Baru</h2>
-      <form class="input__book__form">
+      <form class="input__book__form" id="input__book__form">
         <div class="input__group">
           <label>Judul</label>
-          <input type="text">
+          <input id="book__title__input" type="text">
         </div>
 
         <div class="input__group">
           <label>Penulis</label>
-          <input type="text">
+          <input id="book__author__input" type="text">
         </div>
 
         <div class="input__group">
           <label>Tahun</label>
-          <input type="text">
+          <input id="book__year__input" type="number">
         </div>
 
         <div class="input__group">
-          <label  id="labelInputBookIsComplete" for="inputBookIsComplete">Selesai dibaca</label>
-          <input id="inputBookIsComplete" type="checkbox">
+          <label id="label__book__iscomplete__input"  for="book__iscomplete__input">Selesai dibaca</label>
+          <input id="book__iscomplete__input" type="checkbox">
         </div>
 
         <button id="submit__new__book__button" type="submit">
@@ -44,20 +44,28 @@
         </button>
       </form>
     </section>
-
     <section class="bookshelf">
       <div class="search__book__form">
         <div class="input__group">
           <label>Cari buku</label>
-          <input class="search__input" type="text">
+          <input class="search__input" id="search__input" type="text">
         </div>
       </div>
-      <div id="incomplete__book__shelf__list" class="bookshelf__list">
-        <h2 class="bookshelf__list__title">Belum selesai dibaca</h2>
-      </div>
-      <br>
-      <div id="complete__book__shelf__list" class="bookshelf__list">
-        <h2 class="bookshelf__list__title">Sudah selesai dibaca</h2>
+
+      <div class="bookshelf__container">
+        <div class="bookshelf__list">
+          <h2 class="bookshelf__list__title">Belum selesai dibaca</h2>
+          <div id="incomplete__book__shelf__list__item">
+  
+          </div>
+        </div>
+        
+        <div class="bookshelf__list">
+          <h2 class="bookshelf__list__title">Sudah selesai dibaca</h2>
+          <div id="complete__book__shelf__list__item">
+  
+          </div>
+        </div>
       </div>
     </section>
   </main>
