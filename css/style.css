@@ -46,6 +46,10 @@ input {
   position: absolute;
 }
 
+.search__input {
+  width: 87%;
+}
+
 #label__book__iscomplete__input {
   position: absolute;
   right: 20px;
@@ -70,7 +74,7 @@ header {
 }
 
 main {
-  width: 90%;
+  width: 70%;
   background-color: var(--lightWoodColor);
   margin: auto;
   padding: 30px 25px;
@@ -179,6 +183,12 @@ main {
   border: 1px solid var(--dangerColor);
 }
 
+.edit__button {
+  background-color: var(--pWhiteColor);
+  color: var(--pGreyColor);
+  border: 1px solid var(--pGreyColor);
+}
+
 footer {
   text-align: center;
   margin: 30px 0;
@@ -205,6 +215,15 @@ footer {
   
   #submit__new__book__button p {
     font-size: 14px;
+  }
+
+  .book__button {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .book__button button {
+    margin-bottom: 10px;
   }
 
   input {

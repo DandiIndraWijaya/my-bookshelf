@@ -49,7 +49,6 @@ const generateBookObject = ({ id, title, author, year, isComplete }) => {
   }
 }
 
-
 const isStorageExist = () => {
   if(typeof Storage === undefined){
     alert('Browser kamu tidak mendukung local storage')
@@ -91,10 +90,14 @@ const getBookIndex = (bookId) => {
 }
 
 const removeBook = (bookId) => {
-  const bookIndexToRemove = getBookIndex(bookId)
-  myBooks.splice(bookIndexToRemove, 1)
-  document.dispatchEvent(new Event(RENDER_EVENT))
-  saveUpdatedMyBooksToLocalStorage()
+  const bookTitle = myBooks[getBookIndex(bookId)].title
+  const text = `Hapus ${bookTitle} dari rak?`
+  if(confirm(text)){
+    const bookIndexToRemove = getBookIndex(bookId)
+    myBooks.splice(bookIndexToRemove, 1)
+    document.dispatchEvent(new Event(RENDER_EVENT))
+    saveUpdatedMyBooksToLocalStorage()
+  }
 }
 
 const changeBookShelf = (bookId) => {
@@ -116,11 +119,14 @@ const renderBook = (book) => {
             book.isComplete ? `<button onClick="changeBookShelf(${book.id})" class="button incomplete__button">Belum selesai dibaca</button>` : `<button onClick="changeBookShelf(${book.id})"  class="button complete__button">Selesai dibaca</button>`
           }
         
-          <button onClick="removeBook(${book.id})" class="button delete__button">Hapus buku</button>
+          <button onClick="removeBook(${book.id})" class="button delete__button">Hapus</button>
+       
         </div>
       </article>
     `
 }
+
+{/* <button onClick="editBook(${book.id})" class="button edit__button">Edit</button> */}
 
 const renderBooks = (books) => {
   const inCompleteBookShelfListItem = document.getElementById('incomplete__book__shelf__list__item')
